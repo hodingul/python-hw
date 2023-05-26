@@ -23,18 +23,16 @@ class Point :
     return (self.__x, self.__y)
 
 class Rectangle :
-  lt = Point()
-  rb = Point()
   def __init__(self, x1, y1, x2, y2):
     self.__x1 = x1
     self.__y1 = y1
     self.__x2 = x2
     self.__y2 = y2
-    lt = Point(x1, x1)
-    rb = Point(x2, y2)
+    self.__lt = Point(x1, x1)
+    self.__rb = Point(x2, y2)
 
   def show(self):
-    print(f'좌측 상단 꼭지점이 {self.__x1, self.__y1}이고 우측 상단 꼭지점이 {self.__x2, self.__y2}인 사각형 입니다.')
+    print(f'좌측 상단 꼭지점이 {self.__lt.get()}이고 우측 상단 꼭지점이 {self.__rb.get()}인 사각형 입니다.')
 
   def getWidth(self):
     W = self.__x2 - self.__x1
